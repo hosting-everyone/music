@@ -3,28 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iframe Layout</title>
+    <title>OpenBots | Music</title>
     <style>
         body {
             display: flex;
             flex-wrap: wrap;
-            justify-content: flex-start;
-            margin: 20px;
-            background-color: #f8f8f8;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-color: #121212;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #ffffff;
+        }
+        .iframe-container {
+            width: 100%;
+            max-width: 800px; /* Adjust max-width as needed */
+            height: 265px; /* Adjust height to match the player size */
+            background-color: #1e1e1e; /* Dark background color for the container */
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .iframe-container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
         }
         iframe {
-            width: 30%;
-            height: 200px;
-            margin: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ffffff;
         }
     </style>
 </head>
 <body>
 
-    <iframe width="100%" height="265" scrolling="no" frameborder="no" src="https://www.reverbnation.com/widget_code/html_widget/artist_8941663?widget_id=55&pwc[included_songs]=1&context_type=page_object&spoid=artist_8941663&pwc[size]=small&pwc[color]=dark" style="width:0px;min-width:100%;max-width:100%;"></iframe>
+    <h1>OpenBots Free Music</h1>
+    <div class="iframe-container">
+        <iframe src="https://www.reverbnation.com/widget_code/html_widget/artist_8941663?widget_id=55&pwc[included_songs]=1&context_type=page_object&spoid=artist_8941663&pwc[size]=small&pwc[color]=dark"></iframe>
+    </div>
 
 </body>
 </html>
