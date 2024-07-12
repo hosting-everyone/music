@@ -43,17 +43,40 @@
             margin-bottom: 20px;
             color: #ffffff;
         }
+        .fallback-message {
+            margin-top: 10px;
+            color: #ff0000;
+        }
     </style>
 </head>
 <body>
 
     <h1>OpenBots Free Music</h1>
     <div class="audio-container">
-        <audio controls>
+        <audio id="audioPlayer" controls autoplay>
             <source src="https://icecast-qmusicnl-cdp.triple-it.nl/Qmusic_nl_nonstop_high.aac?aw_0_1st.playerId=redirect" type="audio/aac">
             Your browser does not support the audio element.
         </audio>
+        <div class="fallback-message" id="fallbackMessage"></div>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var audioPlayer = document.getElementById('audioPlayer');
+            var fallbackMessage = document.getElementById('fallbackMessage');
+
+            audioPlayer.onplay = function() {
+                fallbackMessage.textContent = '';
+            };
+
+            audioPlayer.onpause = function() {
+                fallbackMessage.textContent = 'Uw browser ondersteunt automatisch afspelen niet. Druk op de knop om af te spelen.';
+            };
+
+            audioPlayer.autoplay = true;
+            audioPlayer.load();
+        });
+    </script>
 
 </body>
 </html>
